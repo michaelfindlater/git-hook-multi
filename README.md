@@ -20,4 +20,4 @@ find .git/hooks -type l -exec rm {} \; && find .githooks -type f -exec ln -sf ..
 ````
   
 ## Todo
-  - ...
+  - Add Makefile for easier setup.
