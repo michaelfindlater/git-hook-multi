@@ -1,13 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 
-test() {
-  echo "Test"
-}
+cd "$(dirname "$0")/pre-commit.d"
 
-main() {
-  set -e
-  set -o pipefail
-  test
-}
+for hook in *; do
+    bash $hook
+    RESULT=$?
+    if [ $RESULT != 0 ]; then
+        echo "pre-commit.d/$hook returned non-zero: $RESULT, abort commit"
+        exit $RESULT
+    fi
+done
 
-main "$@"
+exit 0
