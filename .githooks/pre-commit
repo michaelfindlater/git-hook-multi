@@ -1,10 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
 test() {
   echo "Test"
 }
 
-main () {
-  main
+main() {
+  set -e
+  set -o pipefail
+  test
 }
+
 main "$@"
