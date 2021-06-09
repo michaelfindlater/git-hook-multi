@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # Usage:
-#   Simply copy this script for each hook. It must be name with the hook name.
+#   Simply copy this script for each hook. It must be named with the hook name.
 #   For example, "pre-commit".
 #
 #   After copying, ensure it is set as executable (i.e., chmod +x pre-commit).
 
 base_dir=$(dirname "$0")
 source $base_dir/utils/delegator.bash
-hook_name=`basename "$0"`
+hook_name=$(basename "$0")
 
 delegate $hook_name
