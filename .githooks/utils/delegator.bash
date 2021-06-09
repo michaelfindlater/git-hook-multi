@@ -30,5 +30,6 @@ delegate () {
     fi
   done
 
+  echo "finished normally"
   exit 0
 }
